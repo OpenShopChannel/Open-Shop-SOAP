@@ -15,5 +15,5 @@ The **SOAP Protocol** is used by the **Wii Shop Channel** in order to connect to
 Each SOAP template is stored as an XML on this repo, however, there is also header information for the SOAP's POST command and Response/Request templates.
 
 Please note that the original parameters in each SOAP template have been replaced with placeholders to protect the security of the original account holders of the WSC accounts when logging the data.
-E.g: <AccountId>12345678</AccountId> to <AccountId>$AccountId</AccountId>.
+E.g: "12345678" to "$AccountId".
 It's up to you to fill in those spaces and create your own data for these templates.

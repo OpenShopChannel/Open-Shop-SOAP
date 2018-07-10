@@ -10,3 +10,10 @@ SOAP (originally Simple Object Access Protocol) is a messaging protocol specific
 
 ## What purpose has this SOAP Protocol?
 The **SOAP Protocol** is used by the **Wii Shop Channel** in order to connect to the IAS/ECS Servers by Nintendo. Those servers have a specific certificate binded to them, and this certificate has to be same as the certificate in the channel itself, so this server has to be re-created. The channel will get a client certificate, of course.
+
+## Understanding the SOAP Templates
+Each SOAP template is stored as an XML on this repo, however, there is also header information for the SOAP's POST command and Response/Request templates.
+
+Please note that the original parameters in each SOAP template have been replaced with placeholders to protect the security of the original account holders of the WSC accounts when logging the data.
+E.g: <AccountId>12345678</AccountId> to <AccountId>$AccountId</AccountId>.
+It's up to you to fill in those spaces and create your own data for these templates.

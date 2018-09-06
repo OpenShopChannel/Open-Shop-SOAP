@@ -47,3 +47,34 @@ Content-Length: 2360
 
 
 <!-- Response -->
+<!-- TimeStamps are in regular UNIX millisecond time. -->
+HTTP/1.1 200 OK
+Date: Thu, 06 Sep 2018 09:49:15 GMT
+Server: Apache/2.2.19
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+
+2d0
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+				  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soapenv:Body>
+		<RegisterResponse xmlns="urn:ias.wsapi.broadon.com">
+			<Version>2.0</Version>
+			<DeviceId>$DeviceId</DeviceId>
+			<MessageId>ECSHOP-$DeviceId-$MessageId</MessageId>
+			<TimeStamp>1536227355000</TimeStamp>
+			<ErrorCode>0</ErrorCode>
+			<ServiceStandbyMode>false</ServiceStandbyMode>
+			<AccountId>$AccountId</AccountId>
+			<DeviceToken>$DeviceToken</DeviceToken>
+			<Country>AU</Country>
+			<ExtAccountId></ExtAccountId>
+			<DeviceCode>$DeviceCode</DeviceCode>
+		</RegisterResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
+0

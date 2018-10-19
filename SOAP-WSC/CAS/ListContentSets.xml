@@ -1,0 +1,117 @@
+<!-- REQUEST -->
+POST /cas/services/CatalogingSOAP HTTP/1.1
+Host: cas.shop.wii.com
+User-Agent: RVL ECDK 0.8.0 Mar  6 2008 19:16:13
+Connection: Keep-Alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:wsapi.cas.broadon.com/ListContentSets
+Content-Length: 2048
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:cas="urn:cas.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<cas:ListContentSets xsi:type="cas:ListContentSetsRequestType">
+  <cas:Version>2.0</cas:Version>
+  <cas:MessageId>ECDK-*-*</cas:MessageId>
+  <cas:DeviceId>*</cas:DeviceId>
+  <cas:DeviceToken>*</cas:DeviceToken>
+  <cas:AccountId>*</cas:AccountId>
+  <cas:ApplicationId>*</cas:ApplicationId>
+  <cas:TIN>*</cas:TIN>
+  <cas:Region>*</cas:Region>
+  <cas:Country>*</cas:Country>
+  <cas:Language>*</cas:Language>
+  <cas:ListResultOffset>0</cas:ListResultOffset>
+  <cas:ListResultLimit>40</cas:ListResultLimit>
+  <cas:Attributes>itemTitle</cas:Attributes>
+  <cas:Attributes>itemComment</cas:Attributes>
+  <cas:Attributes>itemComment2</cas:Attributes>
+  <cas:Attributes>itemComment3</cas:Attributes>
+  <cas:Attributes>itemComment4</cas:Attributes>
+  <cas:Attributes>itemComment5</cas:Attributes>
+  <cas:Attributes>itemComment6</cas:Attributes>
+  <cas:Attributes>itemVersion</cas:Attributes>
+  <cas:Attributes>itemReset</cas:Attributes>
+  <cas:Attributes>itemSet</cas:Attributes>
+  <cas:Attributes>itemSortKey</cas:Attributes>
+  <cas:Attributes>Prices</cas:Attributes>
+  <cas:Attributes>MinUserFileSize</cas:Attributes>
+  <cas:Attributes>MinUserInodes</cas:Attributes>
+  <cas:Attributes>MaxUserFileSize</cas:Attributes>
+  <cas:Attributes>MaxUserInodes</cas:Attributes>
+  <cas:Attributes>NewSince</cas:Attributes>
+  <cas:Attributes>etc, etc</cas:Attributes>
+  <cas:AttributeFilters>
+    <cas:Name>PricingSelection</cas:Name>
+    <cas:Value>RELEASED</cas:Value>
+  </cas:AttributeFilters>
+  <cas:TitleId>*</cas:TitleId>
+</cas:ListContentSets>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE 
+	 (Due to the overwhelmingly seizure inducing garble the original response had, this version has been cut down for easier viewing. -->
+Date: Wed, 11 Jul 2018 10:50:21 GMT
+Server: Apache/2.2.19
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+
+1ff8
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Body>
+<ListContentSetsResponse xmlns="urn:cas.wsapi.broadon.com">
+<Version>2.0</Version>
+<DeviceId>*</DeviceId>
+<MessageId>ECDK-*-*</MessageId>
+<TimeStamp>*</TimeStamp>
+<ErrorCode>0</ErrorCode>
+<ListResultTotalSize>14</ListResultTotalSize>
+<Contents>
+<TitleId>*</TitleId>
+<Contents>
+<TitleIncluded>true</TitleIncluded>
+<ContentIndex>2</ContentIndex>
+</Contents>
+<Attributes>
+<Name>MaxUserInodes</Name>
+<Value>10</Value>
+</Attributes>
+<Attributes>
+<Name>etc</Name>
+<Value>etc</Value>
+</Attributes>
+<Attributes>
+<Name>itemComment</Name>
+<Value>*</Value>
+</Attributes>
+<Prices>
+<ItemId>*</ItemId>
+<Price>
+<Amount>*</Amount>
+<Currency>POINTS</Currency>
+</Price>
+<Limits>
+<Limits>0</Limits>
+<LimitKind>PR</LimitKind>
+</Limits>
+<LicenseKind>PERMANENT</LicenseKind>
+</Prices>
+</Contents>
+<Contents>
+<TitleId>*</TitleId>
+</ListContentSetsResponse>
+</soapenv:Body>
+</soapenv:Envelope>
+0

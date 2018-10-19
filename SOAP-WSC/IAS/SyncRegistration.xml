@@ -1,0 +1,65 @@
+<!-- REQUEST -->
+POST /ias/services/IdentityAuthenticationSOAP HTTP/1.1
+Host: ias.shop.wii.com
+User-Agent: RVL ECDK 0.8.0 Mar  6 2008 19:16:13
+Connection: Keep-Alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:wsapi.ias.broadon.com/SyncRegistration
+Content-Length: 2025
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ias="urn:ias.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ias:SyncRegistration xsi:type="ias:SyncRegistrationRequestType">
+  <ias:Version>2.0</ias:Version>
+  <ias:MessageId>ECDK-*-*</ias:MessageId>
+  <ias:DeviceId>*</ias:DeviceId>
+  <ias:Region>*</ias:Region>
+  <ias:Country>*</ias:Country>
+  <ias:Language>*</ias:Language>
+  <ias:DeviceCert>*</ias:DeviceCert>
+  <ias:Signature>*</ias:Signature>
+  <ias:CertChain>*</ias:CertChain>
+  <ias:Challenge>*</ias:Challenge>
+</ias:SyncRegistration>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Wed, 11 Jul 2018 10:50:14 GMT
+Server: Apache/2.2.19
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+
+2de
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Body>
+<SyncRegistrationResponse xmlns="urn:ias.wsapi.broadon.com">
+<Version>2.0</Version>
+<DeviceId>*</DeviceId>
+<MessageId>ECDK-*-*</MessageId>
+<TimeStamp>*</TimeStamp>
+<ErrorCode>0</ErrorCode>
+<ServiceStandbyMode>false</ServiceStandbyMode>
+<AccountId>*</AccountId>
+<DeviceToken>*</DeviceToken>
+<Country>*</Country>
+<ExtAccountId>
+</ExtAccountId>
+<DeviceCode>*</DeviceCode>
+</SyncRegistrationResponse>
+</soapenv:Body>
+</soapenv:Envelope>
+0

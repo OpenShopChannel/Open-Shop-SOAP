@@ -1,0 +1,65 @@
+<!-- REQUEST -->
+POST /ecs/services/ECommerceSOAP HTTP/1.1
+Host: ecs.shop.wii.com
+User-Agent: RVL ECDK 0.8.0 Mar  6 2008 19:16:13
+Connection: Keep-Alive
+Accept: application/xml
+Accept-Charset: UTF-8
+Content-type: text/xml; charset=utf-8
+SOAPAction: urn:wsapi.ecs.broadon.com/GetECConfig
+Content-Length: 866
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:ecs="urn:ecs.wsapi.broadon.com">
+<SOAP-ENV:Body>
+<ecs:GetECConfig xsi:type="ecs:GetECConfigRequestType">
+  <ecs:Version>2.0</ecs:Version>
+  <ecs:MessageId>ECDK-*-*</ecs:MessageId>
+  <ecs:DeviceId>*</ecs:DeviceId>
+  <ecs:Region>*</ecs:Region>
+  <ecs:Country>*</ecs:Country>
+  <ecs:Language>*</ecs:Language>
+  <ecs:SerialNo>*</ecs:SerialNo>
+  <ecs:ECVersion>ECDK 0.8.0 Mar  6 2008 19:16:13</ecs:ECVersion>
+</ecs:GetECConfig>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+<!-- RESPONSE -->
+HTTP/1.1 200 OK
+Date: Wed, 11 Jul 2018 10:50:10 GMT
+Server: Apache/2.2.19
+Keep-Alive: timeout=15, max=300
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: text/xml;charset=utf-8
+
+4ad
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+				  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Body>
+<GetECConfigResponse xmlns="urn:ecs.wsapi.broadon.com">
+<Version>2.0</Version>
+<DeviceId>*</DeviceId>
+<MessageId>ECDK-*-*</MessageId>
+<TimeStamp>*</TimeStamp>
+<ErrorCode>0</ErrorCode>
+<ServiceStandbyMode>false</ServiceStandbyMode>
+<ContentPrefixURL>http://ccs.cdn.shop.wii.com/ccs/download</ContentPrefixURL>
+<UncachedContentPrefixURL>https://ccs.shop.wii.com/ccs/download</UncachedContentPrefixURL>
+<SystemContentPrefixURL>http://nus.cdn.shop.wii.com/ccs/download</SystemContentPrefixURL>
+<SystemUncachedContentPrefixURL>https://ccs.shop.wii.com/ccs/download</SystemUncachedContentPrefixURL>
+<EcsURL>https://ecs.shop.wii.com/ecs/services/ECommerceSOAP</EcsURL>
+<IasURL>https://ias.shop.wii.com/ias/services/IdentityAuthenticationSOAP</IasURL>
+<CasURL>https://cas.shop.wii.com/cas/services/CatalogingSOAP</CasURL>
+<NusURL>https://nus.shop.wii.com/nus/services/NetUpdateSOAP</NusURL>
+</GetECConfigResponse>
+</soapenv:Body>
+</soapenv:Envelope>
+0
